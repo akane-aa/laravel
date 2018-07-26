@@ -23,3 +23,16 @@ laravel(1)
 
     laravel 5.6
     $ php artisan make:controller WelcomeController
+
+laravel(6)
+
+・MySQLのインデックスサイズに767byteまでしかつかえない
+  -解決方法としてvarcharの最大長を191バイトにする
+  -AppServiceProviderに以下の内容を追記
+
+      use Illuminate\Support\Facades\Schema;
+
+      public function boot()
+      {
+        Schema::defaultStringLength(191);
+      }
