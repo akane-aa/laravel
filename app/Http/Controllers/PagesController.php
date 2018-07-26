@@ -13,6 +13,9 @@ class PagesController extends Controller
 
   public function about()
   {
-    return view('pages.about');
+    $first_name = "Luke";
+    $last_name = "Skywalker";
+
+    return view('pages.about',compact('first_name','last_name'));
   }
 }
