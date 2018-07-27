@@ -7,7 +7,11 @@
 </head>
 <body>
     <div class="container">
-    @yield('content')
+      @if (Session::has('flash_message'))
+              <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+      @endif
+
+      @yield('content')
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
