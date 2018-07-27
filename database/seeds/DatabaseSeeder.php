@@ -23,15 +23,15 @@ class DatabaseSeeder extends Seeder
     }
 }
 
-class ArticlesTableSeeder extends Seeder  // ③
+class ArticlesTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('articles')->delete();  // ④
+        DB::table('articles')->delete();
 
-        $faker = Faker::create('en_US');  // ⑤
+        $faker = Faker::create('en_US');
 
-        for ($i = 0; $i < 10; $i++) {  // ⑥
+        for ($i = 0; $i < 10; $i++) {
             Article::create([
                 'title' => $faker->sentence(),
                 'body' => $faker->paragraph(),
