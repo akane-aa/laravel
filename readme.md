@@ -35,4 +35,5 @@ laravel(6)
       public function boot()
       {
         Schema::defaultStringLength(191);
+
       }
