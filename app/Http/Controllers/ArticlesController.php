@@ -19,4 +19,16 @@ class ArticlesController extends Controller
       return $id;
     }
 
+    public function create()
+    {
+      return view('articles.create');
+    }
+
+    public function store()
+    {
+      $inputs = \Request::all();
+      Article::create($inputs);
+      return redirect('articles');
+      
+    }
 }
